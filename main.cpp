@@ -1,14 +1,13 @@
-
- #include <stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
 #include <stdbool.h>
 #include <time.h>
 
+
+
 // Global variables for guest information
-
-
 int guestStayLengths[6];
 int guestnumber[6];
 int guestRoomChoices[6];
@@ -30,6 +29,9 @@ bool namecheck;
 bool roomsAvailable[6] = {true, true, true, true, true, true};
 int roomPrices[6] = {100, 100, 85, 75, 75, 50};
 int boardPrices[3] = {20, 15, 5};
+
+/* --- nameCheck, daysInMonth, confirmOrQuit, getBoardPrice, etc. remain unchanged --- */
+
 int nameCheck(const char *s ) {
     int k=0;
     if (strlen(s) >16 || strlen(s) <=0) {
@@ -37,11 +39,11 @@ int nameCheck(const char *s ) {
         k++;
     }
 
-        for(int i=0;i<strlen(s);i++) {
-            if ((s[i] <65 )||(s[i] <97 && s[i]>90)||( s[i]>122)  ) {
-               k++;
-            }
+    for(int i=0;i<strlen(s);i++) {
+        if ((s[i] <65 )||(s[i] <97 && s[i]>90)||( s[i]>122)  ) {
+           k++;
         }
+    }
 
     if (k>0){ printf(" The name cant have any unusuall characthers\n");}
     else if (k==0){return 1;}
@@ -54,7 +56,6 @@ int daysInMonth(int month) {
         case 2: return 28;
         default: return 0;
     }
-
 }
 
 int confirmOrQuit(const char* question) {
@@ -64,10 +65,9 @@ int confirmOrQuit(const char* question) {
     c = toupper(c);
     if (c == 'Q') {return -1;}
     if (c == 'N') {return 0;}
-     if (c == 'Y') {return 1;}
+    if (c == 'Y') {return 1;}
     else { return 2;}
 }
-
 
 int getBoardPrice(const char* type) {
     if (strcmp(type, "FB") == 0) return boardPrices[0];
@@ -75,6 +75,8 @@ int getBoardPrice(const char* type) {
     if (strcmp(type, "BB") == 0) return boardPrices[2];
     return 0;
 }
+
+
 
 void checkin() {
     int day, month, year;
@@ -170,7 +172,6 @@ void checkin() {
         if (d == -1) return;
     }
 
-
     while (true) {
         printf("Enter board type (HB/FB/BB): ");
         scanf("%s", boardType);
@@ -185,7 +186,6 @@ void checkin() {
         if (d == 0) continue;
         if (d == -1) return;
     }
-
 
     while (true) {
         printf("\nAvailable rooms:\n");
@@ -205,7 +205,6 @@ void checkin() {
         if (d == -1) return;
     }
 
-
     while (true) {
         printf("Do you want a newspaper? (Y/N): ");
         char c;
@@ -217,7 +216,6 @@ void checkin() {
         if (d == 0) continue;
         if (d == -1) return;
     }
-
 
     roomsAvailable[roomChoice - 1] = false;
     int r;
@@ -238,7 +236,6 @@ void checkin() {
 }
 
 void storeInfo() {
-
     guestStayLengths[guestCount] = stayLength;
     guestRoomChoices[guestCount] = roomChoice;
     strcpy(guestBoardTypes[guestCount], boardType);
@@ -266,218 +263,156 @@ void findAndPrintByID() {
             printf("Board Type: %s\n", guestBoardTypes[i]);
             printf("Newspaper: %d\n", guestNewspapers[i]);
             printf("====================\n");
-            return ;
+            return;
         }
     }
 
     printf("\nNo guest found with Booking ID: %s\n", searchID);
 }
 
-void processTableChoice(int numOfGuests) {
-    char tableChoice;
-    //call to the subroutine to list the available tables and book a choice
-    tableChoice = bookTable(numOfGuests);
-
-    //the table chosen by the user is now unavailable, update tables and communicate to user
-    //if the user couldn't choose a table, explain that none were available
-    switch (tableChoice) {
-        case 'A':
-            endor7 = 1;
-            printf("Your table has successfully been booked - Endor at 7PM\n");
-            break;
-        case 'B':
-            naboo7 = 1;
-            printf("Your table has successfully been booked - Naboo at 7PM\n");
-            break;
-        case 'C':
-            tatooine7 = 1;
-            printf("Your table has successfully been booked - Tatooine at 7PM\n");
-            break;
-        case 'D':
-            endor9 = 1;
-            printf("Your table has successfully been booked - Endor at 9PM\n");
-            break;
-        case 'E':
-            naboo9 = 1;
-            printf("Your table has successfully been booked - Naboo at 9PM\n");
-            break;
-        case 'F':
-            tatooine9 = 1;
-            printf("Your table has successfully been booked - Tatooine at 9PM\n");
-            break;
-        case 'X':
-            printf("Sorry, this table is unavailable.\n");
-            char option;
-            printf("Would you like to choose a different table? (Y/N) : ");
-            fflush(stdin);
-            scanf("%c", &option);
-            if (toupper(option) == 'Y') { //subprogram called again, user can make new choice
-                processTableChoice(numOfGuests);
-            }
-            break;
-        case 0:
-            printf("Sorry, there are no available tables today.\n");
-    }
-}
 
 
-//subroutine to display the available dinner table choices and take the user's choice
-char bookTable(int numOfGuests) {
 
-    if (numOfGuests <=4) {
+int endor7 = 0;
+int naboo7 = 0;
+int tatooine7 = 0;
+int endor9 = 0;
+int naboo9 = 0;
+int tatooine9 = 0;
 
-        //message to display if no tables are available
-        if (endor7 == 1 && endor9 == 1 && naboo7 == 1 && naboo9 == 1 && tatooine7 == 1 && tatooine9 == 1) {
-            char choice = 0;
-            return choice; //return choice to show that no tables could be booked by the user
-        }
-        else {
-            //allow user to enter their choice of table and confirm their choice
-            char choice;
-            do {
-                //messages to display every table that hasn't been booked yet
-                printf("The available tables today are listed as below: \n");
-                if (endor7 == 0) {
-                    printf("A) Endor at 7pm\n");
-                }
-                if (naboo7 == 0) {
-                    printf("B) Naboo at 7pm\n");
-                }
-                if (tatooine7 == 0) {
-                    printf("C) Tatooine at 7pm\n");
-                }
-                if (endor9 == 0) {
-                    printf("D) Endor at 9pm\n");
-                }
-                if (naboo9 == 0) {
-                    printf("E) Naboo at 9pm\n");
-                }
-                if (tatooine9 == 0) {
-                    printf("F) Tatooine at 9pm\n");
-                }
+char bookTable(int numOfGuests);
+void processTableChoice(int numOfGuests);
 
-                printf("Enter your choice of table (Enter letter): ");
-                fflush(stdin);
-                scanf("%c", &choice);
-                char confirm;
-                printf("Is this correct? (Y/N): ");
-                fflush(stdin);
-                scanf("%c", &confirm);
-                if (toupper(confirm) == 'N') {
-                    choice = 'X'; //dummy value given so the do-while loop repeats
-                }
-                choice = toupper(choice);
-                if (choice != 'A' && choice != 'B' && choice != 'C' && choice != 'D' && choice != 'E' && choice != 'F' && choice != 'X') {
-                    printf("Please enter an option from the given list.\n");
-                }
-            }while (choice != 'A' && choice != 'B' && choice != 'C' && choice != 'D' && choice != 'E' && choice != 'F');
-
-            //if the user chooses a table that is already booked, choice is given a dummy value
-            //this value will be rejected by the process table procedure
-            if (endor7 == 1 && choice == 'A') {
-                choice = 'X';
-            }
-            if (naboo7 == 1 && choice == 'B') {
-                choice = 'X';
-            }
-            if (tatooine7 == 1 && choice == 'C') {
-                choice = 'X';
-            }
-            if (endor9 == 1 && choice == 'D') {
-                choice = 'X';
-            }
-            if (naboo9 == 1 && choice == 'E') {
-                choice = 'X';
-            }
-            if (tatooine9 == 1 && choice == 'F') {
-                choice = 'X';
-            }
-            return choice;
-        }
-
-    }
-    else {
-        printf("Sorry, there is not a free table for your party\n");
-    }
-}
-
-int main() {
-for (int i=0;i<100000;i++) {
-        printf("ENTER TEST DATA\n");
-    char guestSystem[6][30];
-    for (int i = 0; i < 6; i++) {
-        if (i == 4) {
-            //user to enter a bookingID for room 4
-            printf("Booking ID value for room 5: ");
-            gets(guestSystem[i]);
-        }
-    }
-
-    int guestNumber[6];
-    for (int i = 0; i < 6; i++) {
-        if (i == 4) {
-            guestNumber[i] = 3;
-            printf("%d\n", guestNumber[i]);
-        }
-    }
-
-    char boardType[6][3];
-    for (int i = 0; i < 6; i++) {
-        if (i == 4) {
-            printf("Enter board type for room 5: ");
-            gets(boardType[i]);
-        }
-    }
-    //for testing, program outputs all the data that should be passed into this program
-    puts(guestSystem[4]); //booking ID for my room
-    printf("%d\n", guestNumber[4]); //number of guests in my room
-    puts(boardType[4]); //my room's board type
-
-    //MAIN CODE BEGINS HERE
+void dinnerSystem() {
     while (1) {
         printf("************* Dinner table booking ***********\n");
 
-        int flag = 0; //variable to confirm whether the guest exists in the system
+        int flag = 0;
         char bookingID[30];
 
         printf("\n Please enter your Booking ID: ");
         scanf("%s", bookingID);
 
-
-        for (int i = 0; i < 6; i++) {
-            int compareID = strcmp(bookingID, guestSystem[i]);
-            if (compareID == 0) {
+        for (int i = 0; i < guestCount; i++) {
+            if (strcmp(bookingID, guestBookingIDs[i]) == 0) {
                 flag = 1;
 
-                int compareBoardFB = strcmp(boardType[i], "FB"); //check if board type is FB (value 0)
-                int compareBoardHB = strcmp(boardType[i], "HB"); //check if board type is HB (value 0)
-                if (compareBoardFB == 0 || compareBoardHB == 0) { //if their board type is FB or HB, proceed
-
-                    //call the procedure to proceed to table booking and processing
-                    int numOfGuests = guestNumber[i];
-                    processTableChoice(numOfGuests);
-
+                if (strcmp(guestBoardTypes[i], "FB") == 0 || strcmp(guestBoardTypes[i], "HB") == 0) {
+                    processTableChoice(guestnumber[i]);
                 }
                 else {
                     printf("Sorry, you can only book a table if your board is FB or HB\n");
                 }
-
             }
         }
         if (flag == 0) {
             printf("ERROR: Unable to book table as guest does not exist\n");
         }
 
+        return;
     }
-    else if (choice == 'I') {
-        findAndPrintByID();
+}
+
+void processTableChoice(int numOfGuests) {
+    char tableChoice;
+    tableChoice = bookTable(numOfGuests);
+
+    switch (tableChoice) {
+        case 'A': endor7 = 1; printf("Your table has successfully been booked - Endor at 7PM\n"); break;
+        case 'B': naboo7 = 1; printf("Your table has successfully been booked - Naboo at 7PM\n"); break;
+        case 'C': tatooine7 = 1; printf("Your table has successfully been booked - Tatooine at 7PM\n"); break;
+        case 'D': endor9 = 1; printf("Your table has successfully been booked - Endor at 9PM\n"); break;
+        case 'E': naboo9 = 1; printf("Your table has successfully been booked - Naboo at 9PM\n"); break;
+        case 'F': tatooine9 = 1; printf("Your table has successfully been booked - Tatooine at 9PM\n"); break;
+
+        case 'X':
+            printf("Sorry, this table is unavailable.\n");
+            char option;
+            printf("Would you like to choose a different table? (Y/N) : ");
+            fflush(stdin);
+            scanf(" %c", &option);
+            if (toupper(option) == 'Y') { processTableChoice(numOfGuests); }
+            break;
+
+        case 0:
+            printf("Sorry, there are no available tables today.\n");
     }
-    else if (choice == 'Q') {
-        printf("Goodbye!\n");
+}
+
+char bookTable(int numOfGuests) {
+    if (numOfGuests <=4) {
+
+        if (endor7 && naboo7 && tatooine7 && endor9 && naboo9 && tatooine9) return 0;
+
+        char choice;
+        do {
+            printf("The available tables today are listed as below: \n");
+            if (!endor7) printf("A) Endor at 7pm\n");
+            if (!naboo7) printf("B) Naboo at 7pm\n");
+            if (!tatooine7) printf("C) Tatooine at 7pm\n");
+            if (!endor9) printf("D) Endor at 9pm\n");
+            if (!naboo9) printf("E) Naboo at 9pm\n");
+            if (!tatooine9) printf("F) Tatooine at 9pm\n");
+
+            printf("Enter your choice of table (letter): ");
+            fflush(stdin);
+            scanf(" %c", &choice);
+            printf("Is this correct? (Y/N): ");
+            char confirm;
+            scanf(" %c", &confirm);
+
+            if (toupper(confirm)=='N') choice='X';
+            choice = toupper(choice);
+
+        } while(choice!='A'&&choice!='B'&&choice!='C'&&choice!='D'&&choice!='E'&&choice!='F');
+
+        if (choice=='A' && endor7) return 'X';
+        if (choice=='B' && naboo7) return 'X';
+        if (choice=='C' && tatooine7) return 'X';
+        if (choice=='D' && endor9) return 'X';
+        if (choice=='E' && naboo9) return 'X';
+        if (choice=='F' && tatooine9) return 'X';
+
+        return choice;
     }
     else {
-        printf("Invalid option.\n");
+        printf("Sorry, there is not a free table for your party\n");
+        return 'X';
     }
 }
+
+
+
+
+int main() {
+
+    for (int i=0;i<100000;i++) {
+        char choice;
+
+        printf("Do you want to Check In (C), Check Out (O), Dinner (D), CHECK info(I), or Quit (Q)? ");
+        scanf(" %c", &choice);
+        choice = toupper(choice);
+
+        if (choice == 'C') {
+            checkin();
+            storeInfo();
+        }
+        else if (choice == 'O') {
+            printf("Check Out function not added yet.\n");
+        }
+        else if (choice == 'D') {
+            dinnerSystem();   // <-- This is where the dinner program is now called
+        }
+        else if (choice == 'I') {
+            findAndPrintByID();
+        }
+        else if (choice == 'Q') {
+            printf("Goodbye!\n");
+            break;
+        }
+        else {
+            printf("Invalid option.\n");
+        }
+    }
+
     return 0;
-}
