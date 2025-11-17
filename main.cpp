@@ -266,33 +266,17 @@ void findAndPrintByID() {
             printf("Board Type: %s\n", guestBoardTypes[i]);
             printf("Newspaper: %d\n", guestNewspapers[i]);
             printf("====================\n");
-            return;
+            return ;
         }
     }
 
     printf("\nNo guest found with Booking ID: %s\n", searchID);
 }
 
-
-char bookTable(int guestNum);
-void processTableChoice(int *guestNumber);
-
-//GLOBAL VARIABLES FOR THIS MODULE ONLY: these variables have scope throughout the whole dinner table subprogram
-//these variables change as the program continues and when users keep booking tables
-int endor7 = 0;
-int naboo7 = 0;
-int tatooine7 = 0;
-int endor9 = 0;
-int naboo9 = 0;
-int tatooine9 = 0;
-
-
-
-//subroutine to decide whether the user's table has been booked or not
-void processTableChoice(int *guestNumber) {
+void processTableChoice(int numOfGuests) {
     char tableChoice;
     //call to the subroutine to list the available tables and book a choice
-    tableChoice = bookTable(guestNumber[3]);
+    tableChoice = bookTable(numOfGuests);
 
     //the table chosen by the user is now unavailable, update tables and communicate to user
     //if the user couldn't choose a table, explain that none were available
@@ -328,7 +312,7 @@ void processTableChoice(int *guestNumber) {
             fflush(stdin);
             scanf("%c", &option);
             if (toupper(option) == 'Y') { //subprogram called again, user can make new choice
-                processTableChoice(guestNumber);
+                processTableChoice(numOfGuests);
             }
             break;
         case 0:
@@ -338,9 +322,9 @@ void processTableChoice(int *guestNumber) {
 
 
 //subroutine to display the available dinner table choices and take the user's choice
-char bookTable(int guestNum) {
+char bookTable(int numOfGuests) {
 
-    if (guestNum <= 4) {
+    if (numOfGuests <=4) {
 
         //message to display if no tables are available
         if (endor7 == 1 && endor9 == 1 && naboo7 == 1 && naboo9 == 1 && tatooine7 == 1 && tatooine9 == 1) {
@@ -413,28 +397,13 @@ char bookTable(int guestNum) {
 
     }
     else {
-        printf("Sorry, there is not a free table for your party");
+        printf("Sorry, there is not a free table for your party\n");
     }
 }
+
 int main() {
 for (int i=0;i<100000;i++) {
-    char choice;
-
-    printf("Do you want to Check In (C), Check Out (O), Dinner (D), CHECK info(I), or Quit (Q)? ");
-    scanf(" %c", &choice);
-    choice = toupper(choice);
-
-    if (choice == 'C') {
-        checkin();
-        storeInfo();
-
-    }
-    else if (choice == 'O') {
-        printf("Check Out function not added yet.\n");
-    }
-    else if (choice == 'D') {
-           //dummy code to enter values for the global variables, which would be used in this module when integrated
-    printf("ENTER TEST DATA\n");
+        printf("ENTER TEST DATA\n");
     char guestSystem[6][30];
     for (int i = 0; i < 6; i++) {
         if (i == 4) {
@@ -485,7 +454,8 @@ for (int i=0;i<100000;i++) {
                 if (compareBoardFB == 0 || compareBoardHB == 0) { //if their board type is FB or HB, proceed
 
                     //call the procedure to proceed to table booking and processing
-                    processTableChoice(guestNumber);
+                    int numOfGuests = guestNumber[i];
+                    processTableChoice(numOfGuests);
 
                 }
                 else {
@@ -498,9 +468,6 @@ for (int i=0;i<100000;i++) {
             printf("ERROR: Unable to book table as guest does not exist\n");
         }
 
-    }
-
-    return 0;
     }
     else if (choice == 'I') {
         findAndPrintByID();
