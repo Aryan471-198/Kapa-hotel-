@@ -545,15 +545,21 @@ int main() {
             printf("Do you want to Check In (C), Check Out (O), Dinner (D), Check info(I), or Quit (Q)? ");
             scanf(" %c", &choice);
             choice = toupper(choice);
-            for (int i = 0; i < 6; i++) {
-                if (roomsAvailable[i] == true) {
-                    if (choice == 'C') {
+            if (choice == 'C') {
+                for (int i = 0; i < 6; i++) {
+                    if (roomsAvailable[i] == true) {
                         checkin();
                         storeInfo();
                     }
+
+                else {
+                    printf("We are full sorry");
+
                 }
+
             }
-             if (choice == 'O') {
+        }
+             else if (choice == 'O') {
                 checkout();
             }
             else if (choice == 'D') {
