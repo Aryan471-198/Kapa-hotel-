@@ -9,14 +9,14 @@
 
 
 // Global variables for guest information
-int guestStayLengths[6];
-int guestnumber[6];
-int guestRoomChoices[6];
-char guestBoardTypes[6][3];
-char guestBookingIDs[6][80];
-bool guestNewspapers[6];
-int guestAge[6];
-int guestNumberOfChildren[6];
+int guestStayLengths[10000];
+int guestnumber[10000];
+int guestRoomChoices[10000];
+char guestBoardTypes[10000][3];
+char guestBookingIDs[10000][80];
+bool guestNewspapers[10000];
+int guestAge[10000];
+int guestNumberOfChildren[10000];
 int guestCount = 0;
 
 char firstName[50];
@@ -50,7 +50,9 @@ int nameCheck(const char *s ) { //validation for name
         }
     }
 
-    if (k>0){ printf(" The name can't have any unusual characters\n");}
+    if (k>0) {
+        printf(" The name can't have any unusual characters\n");
+    return 0;}
     else if (k==0){return 1;}
 }
 
@@ -195,7 +197,7 @@ void checkin() {
 
     while (true) {
         printf("\nAvailable rooms:\n");
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i < 10000; i++)
             printf("Room %d - GBP%d - %s\n", i + 1, roomPrices[i], roomsAvailable[i] ? "Available" : "Occupied");
 
         printf("Choose room number: ");
@@ -403,20 +405,31 @@ void checkout() {
     char searchID[80];
     printf("\nEnter Booking ID to search: ");
     scanf("%s", searchID);
+    bool found = false;
+
     for (int i = 0; i < guestCount; i++) {
         if (strcmp(searchID, guestBookingIDs[i]) == 0) {
-            random =i;
-            float room = roomCost(guestRoomChoices[random]);
+
+            // Found matching guest
+            found = true;
+            random = i;
+
+            float room = roomCost(guestRoomChoices[random] - 1);
             float board = boardCost();
             float news = newspaperCost();
+
             finalBill(room, board, news);
             resetRoom();
-        }
-        else {
-            printf("Your ID is entered wrong or doesnt exist");
+
+            break;
         }
     }
 
+    if (!found) {
+        printf("Your ID is entered wrong or doesn't exist\n");
+    }
+
+    while (getchar() != '\n');
 }
 
 
@@ -452,22 +465,25 @@ float roomCost(int roomNum){
 float boardCost() {
     float total=0;
     char boardType[3];
-    float discount;
+    float discount=0;
 
 
     if (strcmp(guestBoardTypes[random],"FB")==0) {
         total = 20 * guestStayLengths[random] * guestnumber[random];
-         discount == 10 * guestNumberOfChildren[random] * guestnumber[random];
+         discount = 10 * guestNumberOfChildren[random] * guestStayLengths[random];
+        total = total-discount;
     }
     else if (strcmp(guestBoardTypes[random],"HB")==0) {
         total = 15 *  guestStayLengths[random] * guestnumber[random];
-        discount == 7.5 * guestNumberOfChildren[random] * guestnumber[random];
+        discount = 7.5 * guestNumberOfChildren[random] * guestStayLengths[random];
+        total = total-discount;
     }
     else if (strcmp(guestBoardTypes[random],"BB")==0) {
         total = 5 *  guestStayLengths[random] * guestnumber[random];
-        discount == 12.5 * guestNumberOfChildren[random] * guestnumber[random];
+        discount = 2.5 * guestNumberOfChildren[random] * guestStayLengths[random];
+        total = total-discount;
     }
-    total = total-discount;
+
 
     return total;
 }
