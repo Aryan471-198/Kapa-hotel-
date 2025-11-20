@@ -201,7 +201,7 @@ void checkin() {
 
     while (true) {
         printf("\nAvailable rooms:\n");
-        for (int i = 0; i < 10000; i++)
+        for (int i = 0; i < 6; i++)
             printf("Room %d - GBP%d - %s\n", i + 1, roomPrices[i], roomsAvailable[i] ? "Available" : "Occupied");
 
         printf("Choose room number: ");
