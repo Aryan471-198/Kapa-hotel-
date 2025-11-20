@@ -244,7 +244,17 @@ void checkin() {
     printf("\n************* Check-in Complete ***********\n");
 }
 
+void storeInfo() { //write all of the check in data to the global vars
+    guestStayLengths[guestCount] = stayLength;
+    guestRoomChoices[guestCount] = roomChoice;
+    strcpy(guestBoardTypes[guestCount], boardType);
+    strcpy(guestBookingIDs[guestCount], bookingID);
+    guestNewspapers[guestCount] = newspaper;
+    guestnumber[guestCount] = children + adults;
+    guestCount++;
 
+    printf("\nGuest stay info has been stored under booking ID: %s\n", bookingID);
+}
 
 void findAndPrintByID() {
     char searchID[80];
@@ -389,9 +399,9 @@ float roomCost(int roomNum);
 float boardCost();
 float newspaperCost();
 int finalBill( float roomTotal, float boardTotal, float newspaper);
-void removeInfo(int Random);
 int resetRoom();
 int random;
+void removeInfo(int Random);
 void checkout() {
     char searchID[80];
     printf("\nEnter Booking ID to search: ");
@@ -490,14 +500,6 @@ float newspaperCost() {
     return 0;
     }
 }
-void removeInfo(int Random) { //write all of the check in data to the global vars
-    guestStayLengths[Random] = 0;
-    guestRoomChoices[Random] = 0;
-    strcpy(guestBookingIDs[Random], "");
-    guestNewspapers[Random] = false;
-    guestnumber[Random] = 0;
-    printf("\nGuest stay info has been deleted: %s\n", bookingID);
-}
 // Subroutine outputs the final bill
 int finalBill(float roomTotal, float boardTotal, float newspaper) {
 
@@ -513,7 +515,19 @@ int finalBill(float roomTotal, float boardTotal, float newspaper) {
 
 int resetRoom() {
     roomsAvailable[guestRoomChoices[random] - 1] = true;
-    strcpy(guestBoardTypes[random], "");
+}
+void removeInfo(int Random) {
+    guestStayLengths[Random] = 0;
+    guestRoomChoices[Random] = 0;
+    strcpy(guestBoardTypes[Random], "");
+    strcpy(guestBookingIDs[Random], "");
+    guestNewspapers[Random] = false;
+    guestnumber[Random] = 0;
+     guestAge[Random]=0;
+     guestNumberOfChildren[Random]=0;
+
+
+    printf("\nGuest stay info has been deleted: %s\n", bookingID);
 }
 
 int main() {
