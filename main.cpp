@@ -541,24 +541,27 @@ int main() {
 
         while (true) {
             char choice;
-
+int k;
             printf("Do you want to Check In (C), Check Out (O), Dinner (D), Check info(I), or Quit (Q)? ");
             scanf(" %c", &choice);
             choice = toupper(choice);
             if (choice == 'C') {
                 for (int i = 0; i < 6; i++) {
-                    if (roomsAvailable[i] == true) {
-                        checkin();
-                        storeInfo();
+                    if (roomsAvailable[i] == false) {
+                        k++;
                     }
-
+                }
+                  if (k==6) {
+                      printf("We are full sorry");
+                  }
                 else {
-                    printf("We are full sorry");
+                   checkin();
+                    storeInfo();
 
                 }
 
             }
-        }
+
              else if (choice == 'O') {
                 checkout();
             }
