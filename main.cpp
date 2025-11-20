@@ -509,11 +509,11 @@ int finalBill(float roomTotal, float boardTotal, float newspaper) {
 
     printf("\nBill for %s ", guestBookingIDs[random]);
     printf("\nBill for guest name :%s ",  guestFirstName[random]);
-    printf("\nRoom total: £%.2f", roomTotal);
-    printf("\nBoard total: £%.2f", boardTotal);
-    printf("\nNewspaper total: £%.2f", newspaper);
+    printf("\nRoom total: GDP%.2f", roomTotal);
+    printf("\nBoard total: GDP%.2f", boardTotal);
+    printf("\nNewspaper total: GDP%.2f", newspaper);
 
-    printf("\n\nOverall total: £%.2f",roomTotal + boardTotal + newspaper);
+    printf("\n\nOverall total: GDP%.2f",roomTotal + boardTotal + newspaper);
 
     return 0;
 }
