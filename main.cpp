@@ -101,9 +101,10 @@ void checkin() {
         }while(p != 1);
 
         int d= (confirmOrQuit("Is this correct?"));
-        if (d == 1)
-            guestFirstName[guestCount][]= firstName;;
+        if (d == 1) {
+        strcpy(guestFirstName[guestCount], firstName);
             break;
+        }
         if (d == 0) continue;
         if (d == -1) return;
     }
@@ -530,7 +531,7 @@ void removeInfo(int Random) {
     guestnumber[Random] = 0;
      guestAge[Random]=0;
      guestNumberOfChildren[Random]=0;
-    
+
 
 
     printf("\nGuest stay info has been deleted: %s\n", bookingID);
