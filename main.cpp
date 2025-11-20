@@ -531,7 +531,7 @@ void removeInfo(int Random) {
 }
 
 int main() {
-    for (int i=0; i<100000; i++) {
+
         while (true) {
             char choice;
 
@@ -554,12 +554,12 @@ int main() {
             }
             else if (choice == 'Q') {
                 printf("Goodbye!\n");
-                break;
+              
             }
             else {
                 printf("Invalid option.\n");
             }
         }
-    }
+
     return 0;
 }
