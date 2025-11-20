@@ -17,6 +17,7 @@ char guestBookingIDs[10000][80];
 bool guestNewspapers[10000];
 int guestAge[10000];
 int guestNumberOfChildren[10000];
+char guestFirstName[10000][15];
 int guestCount = 0;
 
 char firstName[50];
@@ -100,7 +101,9 @@ void checkin() {
         }while(p != 1);
 
         int d= (confirmOrQuit("Is this correct?"));
-        if (d == 1) break;
+        if (d == 1)
+            guestFirstName[guestCount][]= firstName;;
+            break;
         if (d == 0) continue;
         if (d == -1) return;
     }
@@ -504,6 +507,7 @@ float newspaperCost() {
 int finalBill(float roomTotal, float boardTotal, float newspaper) {
 
     printf("\nBill for %s ", guestBookingIDs[random]);
+    printf("\nBill for guest name :%s ",  guestFirstName[random]);
     printf("\nRoom total: £%.2f", roomTotal);
     printf("\nBoard total: £%.2f", boardTotal);
     printf("\nNewspaper total: £%.2f", newspaper);
@@ -521,10 +525,12 @@ void removeInfo(int Random) {
     guestRoomChoices[Random] = 0;
     strcpy(guestBoardTypes[Random], "");
     strcpy(guestBookingIDs[Random], "");
+    strcpy(guestFirstName[Random], "");
     guestNewspapers[Random] = false;
     guestnumber[Random] = 0;
      guestAge[Random]=0;
      guestNumberOfChildren[Random]=0;
+    
 
 
     printf("\nGuest stay info has been deleted: %s\n", bookingID);
@@ -554,7 +560,7 @@ int main() {
             }
             else if (choice == 'Q') {
                 printf("Goodbye!\n");
-              
+
             }
             else {
                 printf("Invalid option.\n");
