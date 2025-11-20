@@ -553,7 +553,7 @@ int main() {
                     }
                 }
             }
-            else if (choice == 'O') {
+             if (choice == 'O') {
                 checkout();
             }
             else if (choice == 'D') {
