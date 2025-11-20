@@ -402,8 +402,8 @@ char bookTable(int numOfGuests) {
 float roomCost(int roomNum);
 float boardCost();
 float newspaperCost();
-int finalBill( float roomTotal, float boardTotal, float newspaper);
-int resetRoom();
+void finalBill( float roomTotal, float boardTotal, float newspaper);
+void resetRoom();
 int random;
 void removeInfo(int Random);
 void checkout() {
@@ -425,9 +425,11 @@ void checkout() {
 
             finalBill(room, board, news);
             resetRoom();
+            printf("g");
             removeInfo(random);
+            printf("b");
 
-            break;
+
         }
     }
 
@@ -435,7 +437,7 @@ void checkout() {
         printf("Your ID is entered wrong or doesn't exist\n");
     }
 
-    while (getchar() != '\n');
+
 }
 
 
@@ -505,7 +507,7 @@ float newspaperCost() {
     }
 }
 // Subroutine outputs the final bill
-int finalBill(float roomTotal, float boardTotal, float newspaper) {
+void finalBill(float roomTotal, float boardTotal, float newspaper) {
 
     printf("\nBill for %s ", guestBookingIDs[random]);
     printf("\nBill for guest name :%s ",  guestFirstName[random]);
@@ -515,13 +517,16 @@ int finalBill(float roomTotal, float boardTotal, float newspaper) {
 
     printf("\n\nOverall total: GDP%.2f",roomTotal + boardTotal + newspaper);
 
-    return 0;
+
 }
 
-int resetRoom() {
+void resetRoom() {
     roomsAvailable[guestRoomChoices[random] - 1] = true;
 }
 void removeInfo(int Random) {
+    char deletedID[80];
+    strcpy(deletedID, guestBookingIDs[Random]);   // save before clearing
+
     guestStayLengths[Random] = 0;
     guestRoomChoices[Random] = 0;
     strcpy(guestBoardTypes[Random], "");
@@ -529,19 +534,17 @@ void removeInfo(int Random) {
     strcpy(guestFirstName[Random], "");
     guestNewspapers[Random] = false;
     guestnumber[Random] = 0;
-     guestAge[Random]=0;
-     guestNumberOfChildren[Random]=0;
+    guestAge[Random] = 0;
+    guestNumberOfChildren[Random] = 0;
 
-
-
-    printf("\nGuest stay info has been deleted: %s\n", bookingID);
+    printf("\nGuest stay info has been deleted: %s\n", deletedID);
 }
 
 int main() {
 
         while (true) {
             char choice;
-int k;
+int k=0;
             printf("Do you want to Check In (C), Check Out (O), Dinner (D), Check info(I), or Quit (Q)? ");
             scanf(" %c", &choice);
             choice = toupper(choice);
