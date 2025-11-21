@@ -15,7 +15,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Program Files (x86)/JetBrains/CLion 2024.1.4/bin/mingw/bin/addr2line.exe"
+			"value" : "C:/Users/bluef/Downloads/CLion 2025.2.1/bin/mingw/bin/addr2line.exe"
 		},
 		{
 			"name" : "CMAKE_AR",
@@ -31,7 +31,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Program Files (x86)/JetBrains/CLion 2024.1.4/bin/mingw/bin/ar.exe"
+			"value" : "C:/Users/bluef/Downloads/CLion 2025.2.1/bin/mingw/bin/ar.exe"
 		},
 		{
 			"name" : "CMAKE_BUILD_TYPE",
@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/prasanya.ramprasad25/Downloads/Kapa-hotel-/Kapa-hotel-/cmake-build-debug"
+			"value" : "c:/Users/bluef/Downloads/Kapa-hotel-/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -67,7 +67,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "3"
+			"value" : "4"
 		},
 		{
 			"name" : "CMAKE_CACHE_MINOR_VERSION",
@@ -79,7 +79,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "28"
+			"value" : "0"
 		},
 		{
 			"name" : "CMAKE_CACHE_PATCH_VERSION",
@@ -91,7 +91,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "1"
+			"value" : "2"
 		},
 		{
 			"name" : "CMAKE_COLOR_DIAGNOSTICS",
@@ -115,7 +115,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Program Files (x86)/JetBrains/CLion 2024.1.4/bin/cmake/win/x64/bin/cmake.exe"
+			"value" : "C:/Users/bluef/Downloads/CLion 2025.2.1/bin/cmake/win/x64/bin/cmake.exe"
 		},
 		{
 			"name" : "CMAKE_CPACK_COMMAND",
@@ -127,7 +127,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Program Files (x86)/JetBrains/CLion 2024.1.4/bin/cmake/win/x64/bin/cpack.exe"
+			"value" : "C:/Users/bluef/Downloads/CLion 2025.2.1/bin/cmake/win/x64/bin/cpack.exe"
 		},
 		{
 			"name" : "CMAKE_CTEST_COMMAND",
@@ -139,7 +139,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Program Files (x86)/JetBrains/CLion 2024.1.4/bin/cmake/win/x64/bin/ctest.exe"
+			"value" : "C:/Users/bluef/Downloads/CLion 2025.2.1/bin/cmake/win/x64/bin/ctest.exe"
 		},
 		{
 			"name" : "CMAKE_CXX_COMPILER",
@@ -155,7 +155,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Program Files (x86)/JetBrains/CLion 2024.1.4/bin/mingw/bin/g++.exe"
+			"value" : "C:/Users/bluef/Downloads/CLion 2025.2.1/bin/mingw/bin/g++.exe"
 		},
 		{
 			"name" : "CMAKE_CXX_COMPILER_AR",
@@ -171,7 +171,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Program Files (x86)/JetBrains/CLion 2024.1.4/bin/mingw/bin/gcc-ar.exe"
+			"value" : "C:/Users/bluef/Downloads/CLion 2025.2.1/bin/mingw/bin/gcc-ar.exe"
 		},
 		{
 			"name" : "CMAKE_CXX_COMPILER_RANLIB",
@@ -187,7 +187,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Program Files (x86)/JetBrains/CLion 2024.1.4/bin/mingw/bin/gcc-ranlib.exe"
+			"value" : "C:/Users/bluef/Downloads/CLion 2025.2.1/bin/mingw/bin/gcc-ranlib.exe"
 		},
 		{
 			"name" : "CMAKE_CXX_FLAGS",
@@ -299,7 +299,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Program Files (x86)/JetBrains/CLion 2024.1.4/bin/mingw/bin/gcc.exe"
+			"value" : "C:/Users/bluef/Downloads/CLion 2025.2.1/bin/mingw/bin/gcc.exe"
 		},
 		{
 			"name" : "CMAKE_C_COMPILER_AR",
@@ -315,7 +315,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Program Files (x86)/JetBrains/CLion 2024.1.4/bin/mingw/bin/gcc-ar.exe"
+			"value" : "C:/Users/bluef/Downloads/CLion 2025.2.1/bin/mingw/bin/gcc-ar.exe"
 		},
 		{
 			"name" : "CMAKE_C_COMPILER_RANLIB",
@@ -331,7 +331,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Program Files (x86)/JetBrains/CLion 2024.1.4/bin/mingw/bin/gcc-ranlib.exe"
+			"value" : "C:/Users/bluef/Downloads/CLion 2025.2.1/bin/mingw/bin/gcc-ranlib.exe"
 		},
 		{
 			"name" : "CMAKE_C_FLAGS",
@@ -443,7 +443,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Program Files (x86)/JetBrains/CLion 2024.1.4/bin/mingw/bin/dlltool.exe"
+			"value" : "C:/Users/bluef/Downloads/CLion 2025.2.1/bin/mingw/bin/dlltool.exe"
 		},
 		{
 			"name" : "CMAKE_EXECUTABLE_FORMAT",
@@ -538,6 +538,22 @@
 			"value" : ""
 		},
 		{
+			"name" : "CMAKE_EXPORT_BUILD_DATABASE",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Enable/Disable output of build database during the build."
+				}
+			],
+			"type" : "BOOL",
+			"value" : ""
+		},
+		{
 			"name" : "CMAKE_EXPORT_COMPILE_COMMANDS",
 			"properties" : 
 			[
@@ -575,7 +591,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/prasanya.ramprasad25/Downloads/Kapa-hotel-/Kapa-hotel-/cmake-build-debug/CMakeFiles/pkgRedirects"
+			"value" : "C:/Users/bluef/Downloads/Kapa-hotel-/cmake-build-debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -647,7 +663,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/prasanya.ramprasad25/Downloads/Kapa-hotel-/Kapa-hotel-"
+			"value" : "C:/Users/bluef/Downloads/Kapa-hotel-"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -659,7 +675,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Program Files (x86)/Kapa_hotel_"
+			"value" : "C:/Program Files (x86)/Project"
 		},
 		{
 			"name" : "CMAKE_LINKER",
@@ -675,7 +691,19 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Program Files (x86)/JetBrains/CLion 2024.1.4/bin/mingw/bin/ld.exe"
+			"value" : "C:/Users/bluef/Downloads/CLion 2025.2.1/bin/mingw/bin/ld.exe"
+		},
+		{
+			"name" : "CMAKE_LIST_FILE_NAME",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Name of CMakeLists files to read"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "CMakeLists.txt"
 		},
 		{
 			"name" : "CMAKE_MAKE_PROGRAM",
@@ -687,7 +715,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Program Files (x86)/JetBrains/CLion 2024.1.4/bin/ninja/win/x64/ninja.exe"
+			"value" : "C:/Users/bluef/Downloads/CLion 2025.2.1/bin/ninja/win/x64/ninja.exe"
 		},
 		{
 			"name" : "CMAKE_MODULE_LINKER_FLAGS",
@@ -783,7 +811,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Program Files (x86)/JetBrains/CLion 2024.1.4/bin/mingw/bin/nm.exe"
+			"value" : "C:/Users/bluef/Downloads/CLion 2025.2.1/bin/mingw/bin/nm.exe"
 		},
 		{
 			"name" : "CMAKE_NUMBER_OF_MAKEFILES",
@@ -811,7 +839,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Program Files (x86)/JetBrains/CLion 2024.1.4/bin/mingw/bin/objcopy.exe"
+			"value" : "C:/Users/bluef/Downloads/CLion 2025.2.1/bin/mingw/bin/objcopy.exe"
 		},
 		{
 			"name" : "CMAKE_OBJDUMP",
@@ -827,7 +855,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Program Files (x86)/JetBrains/CLion 2024.1.4/bin/mingw/bin/objdump.exe"
+			"value" : "C:/Users/bluef/Downloads/CLion 2025.2.1/bin/mingw/bin/objdump.exe"
 		},
 		{
 			"name" : "CMAKE_PLATFORM_INFO_INITIALIZED",
@@ -891,7 +919,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Program Files (x86)/JetBrains/CLion 2024.1.4/bin/mingw/bin/ranlib.exe"
+			"value" : "C:/Users/bluef/Downloads/CLion 2025.2.1/bin/mingw/bin/ranlib.exe"
 		},
 		{
 			"name" : "CMAKE_RC_COMPILER",
@@ -907,7 +935,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Program Files (x86)/JetBrains/CLion 2024.1.4/bin/mingw/bin/windres.exe"
+			"value" : "C:/Users/bluef/Downloads/CLion 2025.2.1/bin/mingw/bin/windres.exe"
 		},
 		{
 			"name" : "CMAKE_RC_COMPILER_WORKS",
@@ -1015,7 +1043,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Program Files (x86)/JetBrains/CLion 2024.1.4/bin/mingw/bin/readelf.exe"
+			"value" : "C:/Users/bluef/Downloads/CLion 2025.2.1/bin/mingw/bin/readelf.exe"
 		},
 		{
 			"name" : "CMAKE_ROOT",
@@ -1027,7 +1055,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Program Files (x86)/JetBrains/CLion 2024.1.4/bin/cmake/win/x64/share/cmake-3.28"
+			"value" : "C:/Users/bluef/Downloads/CLion 2025.2.1/bin/cmake/win/x64/share/cmake-4.0"
 		},
 		{
 			"name" : "CMAKE_SHARED_LINKER_FLAGS",
@@ -1235,7 +1263,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Program Files (x86)/JetBrains/CLion 2024.1.4/bin/mingw/bin/strip.exe"
+			"value" : "C:/Users/bluef/Downloads/CLion 2025.2.1/bin/mingw/bin/strip.exe"
 		},
 		{
 			"name" : "CMAKE_TAPI",
@@ -1279,7 +1307,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/prasanya.ramprasad25/Downloads/Kapa-hotel-/Kapa-hotel-/cmake-build-debug"
+			"value" : "C:/Users/bluef/Downloads/Kapa-hotel-/cmake-build-debug"
 		},
 		{
 			"name" : "Kapa_hotel__IS_TOP_LEVEL",
@@ -1303,19 +1331,43 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/prasanya.ramprasad25/Downloads/Kapa-hotel-/Kapa-hotel-"
+			"value" : "C:/Users/bluef/Downloads/Kapa-hotel-"
 		},
 		{
-			"name" : "_CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED",
+			"name" : "Project_BINARY_DIR",
 			"properties" : 
 			[
 				{
 					"name" : "HELPSTRING",
-					"value" : "linker supports push/pop state"
+					"value" : "Value Computed by CMake"
 				}
 			],
-			"type" : "INTERNAL",
-			"value" : "TRUE"
+			"type" : "STATIC",
+			"value" : "C:/Users/bluef/Downloads/Kapa-hotel-/cmake-build-debug"
+		},
+		{
+			"name" : "Project_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "ON"
+		},
+		{
+			"name" : "Project_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "C:/Users/bluef/Downloads/Kapa-hotel-"
 		}
 	],
 	"kind" : "cache",

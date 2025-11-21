@@ -9,7 +9,7 @@
 					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
 					"minimumCMakeVersion" : 
 					{
-						"string" : "2.8"
+						"string" : "3.5"
 					},
 					"projectIndex" : 0,
 					"source" : ".",
@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "Kapa_hotel_::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Kapa_hotel_-Debug-76e7e51999da1bdf5a20.json",
+					"jsonFile" : "target-Kapa_hotel_-Debug-feb3b4a639471d835394.json",
 					"name" : "Kapa_hotel_",
 					"projectIndex" : 0
 				}
@@ -49,12 +49,12 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/prasanya.ramprasad25/Downloads/Kapa-hotel-/Kapa-hotel-/cmake-build-debug",
-		"source" : "C:/Users/prasanya.ramprasad25/Downloads/Kapa-hotel-/Kapa-hotel-"
+		"build" : "C:/Users/bluef/Downloads/Kapa-hotel-/cmake-build-debug",
+		"source" : "C:/Users/bluef/Downloads/Kapa-hotel-"
 	},
 	"version" : 
 	{
 		"major" : 2,
-		"minor" : 6
+		"minor" : 8
 	}
 }

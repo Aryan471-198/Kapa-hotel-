@@ -68,9 +68,12 @@ int daysInMonth(int month) {
 
 int confirmOrQuit(const char* question) {
     char c;
-    printf("%s (Y/N, Q to quit): ", question);
-    scanf(" %c", &c);
-    c = toupper(c);
+    do {
+        printf("%s (Y/N, Q to quit): ", question);
+        fflush(stdin);
+        scanf(" %c", &c);
+        c = toupper(c);
+    }while (c != 'Y' && c != 'N' && c != 'Q');
     if (c == 'Q') {return -1;}
     if (c == 'N') {return 0;}
     if (c == 'Y') {return 1;}
@@ -288,7 +291,7 @@ void findAndPrintByID() {
             printf("\n=== Guest Found ===\n");
             printf("Booking ID: %s\n", guestBookingIDs[i]);
             printf("Room: %d\n", guestRoomChoices[i]);
-            printf("Stay Length: %d nights\n", guestStayLengths[i]);
+            printf("Stay Length: %d days\n", guestStayLengths[i]);
             printf("number of guests: %d \n", guestnumber[i]);
             printf("Board Type: %s\n", guestBoardTypes[i]);
             printf("Newspaper: %d\n", guestNewspapers[i]);
