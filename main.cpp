@@ -40,7 +40,7 @@ int boardPrices[3] = {20, 15, 5};
 
 int nameCheck(const char *s ) { //validation for name
     int k=0;
-    if (strlen(s) >16 || strlen(s) <=0) {
+    if (strlen(s) >16 || strlen(s) <=2) {
         printf(" The name you entered is either too long or too short \n");
         k++;
     }
