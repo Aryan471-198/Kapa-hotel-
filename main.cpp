@@ -162,10 +162,10 @@ void checkin() {
             if (children > 0 && adults < 1) {
                 printf("Children must be accompanied by at least one adult.\n");
             }
-            if (adults + children > 4) {
+            if ((adults + children) > 4) {
                 printf("Maximum guests allowed is 4.\n");
             }
-        }while ((adults != 1 && adults != 2 && adults != 3 && adults != 4 )||( children != 1 && adults != 2 && adults != 3 && adults != 4));
+        }while ((adults != 1 && adults != 2 && adults != 3 && adults != 4) && ( children != 1 && children != 2 && children != 3 && children != 4) || (adults + children) > 4);
 
 
         int d= (confirmOrQuit("Is this correct?"));
@@ -173,6 +173,7 @@ void checkin() {
         if (d == 0) continue;
         if (d == -1) return;
     }
+
      guestNumberOfChildren[guestCount]=children;
     while (true) {
         do{
