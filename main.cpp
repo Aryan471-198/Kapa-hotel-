@@ -152,19 +152,22 @@ void checkin() {
 
 
     while (true) {
-        printf("Enter number of adults (16+): ");
-        scanf("%d", &adults);
-        printf("Enter number of children (15 or under): ");
-        scanf("%d", &children);
+        do {
+            printf("Enter number of adults (16+): ");
+            fflush(stdin);
+            scanf("%d", &adults);
+            printf("Enter number of children (15 or under): ");
+            fflush(stdin);
+            scanf("%d", &children);
+            if (children > 0 && adults < 1) {
+                printf("Children must be accompanied by at least one adult.\n");
+            }
+            if (adults + children > 4) {
+                printf("Maximum guests allowed is 4.\n");
+            }
+        }while ((adults != 1 && adults != 2 && adults != 3 && adults != 4 )||( children != 1 && adults != 2 && adults != 3 && adults != 4));
 
-        if (children > 0 && adults < 1) {
-            printf("Children must be accompanied by at least one adult.\n");
-            continue;
-        }
-        if (adults + children > 4) {
-            printf("Maximum guests allowed is 4.\n");
-            continue;
-        }
+
         int d= (confirmOrQuit("Is this correct?"));
         if (d == 1) break;
         if (d == 0) continue;
@@ -172,12 +175,15 @@ void checkin() {
     }
      guestNumberOfChildren[guestCount]=children;
     while (true) {
-        printf("Enter number of days to stay (max 15): ");
-        scanf("%d", &stayLength);
-        if (stayLength < 1 || stayLength > 15) {
-            printf("Invalid stay length.\n");
-            continue;
-        }
+        do{
+            printf("Enter number of days to stay (max 15): ");
+            fflush(stdin);
+            scanf("%d", &stayLength);
+            if (stayLength < 1 || stayLength > 15) {
+               printf("Invalid stay length.\n");
+            }
+        }while (stayLength != 1 && stayLength != 2 && stayLength != 3 && stayLength != 4 && stayLength != 5 && stayLength != 6 && stayLength != 7 && stayLength != 8 && stayLength != 9 && stayLength != 10 && stayLength != 11 && stayLength != 12 && stayLength != 13 && stayLength != 14 && stayLength != 15 );
+
         int d= (confirmOrQuit("Is this correct?"));
         if (d == 1) break;
         if (d == 0) continue;
@@ -200,17 +206,25 @@ void checkin() {
     }
 
     while (true) {
-        printf("\nAvailable rooms:\n");
-        for (int i = 0; i < 6; i++)
-            printf("Room %d - GBP%d - %s\n", i + 1, roomPrices[i], roomsAvailable[i] ? "Available" : "Occupied");
+        do{
+            printf("\nAvailable rooms:\n");
+            for (int i = 0; i < 6; i++)
+                printf("Room %d - GBP%d - %s\n", i + 1, roomPrices[i], roomsAvailable[i] ? "Available" : "Occupied");
 
-        printf("Choose room number: ");
-        scanf("%d", &roomChoice);
+            printf("Choose room number: ");
+            fflush(stdin);
+            scanf("%d", &roomChoice);
+            if (roomChoice != 1 && roomChoice != 2 && roomChoice != 3 && roomChoice != 4 && roomChoice != 5 && roomChoice != 6 && !roomsAvailable [roomChoice-1]) {
+                printf("Room unavailable or invalid.\n");
+            }
 
-        if (roomChoice < 1 || roomChoice > 6 || !roomsAvailable[roomChoice - 1]) {
-            printf("Room unavailable or invalid.\n");
+        }while(roomChoice != 1 && roomChoice != 2 && roomChoice != 3 && roomChoice != 4 && roomChoice != 5 && roomChoice != 6 && !roomsAvailable [roomChoice-1]);
+
+
+       /*
             continue;
-        }
+        }*/
+
         int d= (confirmOrQuit("Is this correct?"));
         if (d == 1) break;
         if (d == 0) continue;
@@ -385,7 +399,9 @@ char bookTable(int numOfGuests) {
             else if (toupper(confirm) == 'Q') {
                 choice = 'Z'; //dummy value given so the user can exit dinner subprogram instantly
             }
+
             choice = toupper(choice);
+
             if (choice != 'A' && choice != 'B' && choice != 'C' && choice != 'D' && choice != 'E' && choice != 'F' && choice != 'X' && choice != 'Z') {
                 printf("Please enter a VALID option from the given list.\n");
             }
