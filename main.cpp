@@ -425,11 +425,7 @@ void checkout() {
 
             finalBill(room, board, news);
             resetRoom();
-            printf("g");
             removeInfo(random);
-            printf("b");
-
-
         }
     }
 
