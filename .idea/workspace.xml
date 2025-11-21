@@ -101,11 +101,6 @@
   }
 }</component>
   <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Kapa_hotel_" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Kapa_hotel_" TARGET_NAME="Kapa_hotel_" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Kapa_hotel_" RUN_TARGET_NAME="Kapa_hotel_">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -128,6 +123,7 @@
       <workItem from="1763662966578" duration="5337000" />
       <workItem from="1763720425959" duration="107000" />
       <workItem from="1763726908573" duration="1018000" />
+      <workItem from="1763728276587" duration="426000" />
     </task>
     <servers />
   </component>
