@@ -89,7 +89,7 @@ int getBoardPrice(const char* type) {
 void checkin() {
     int day, month, year;
 
-    printf("************* Welcome to Kap Hotel Check-in ***********\n");
+    printf("************ Welcome to Kapa Hotel Check-in **********\n");
     printf("You can quit at any question by pressing 'Q'.\n");
 
     while (true) {
@@ -245,6 +245,8 @@ void checkin() {
     printf("Room: %d (GDP%d)\n", roomChoice, roomPrices[roomChoice - 1]);
     printf("Newspaper: %d\n", newspaper );
     printf("Booking ID: %s\n", bookingID);
+
+    printf("\nGuest stay info has been stored under booking ID: %s\n", bookingID);
     printf("\n************* Check-in Complete ***********\n");
 }
 
@@ -257,7 +259,7 @@ void storeInfo() { //write all of the check in data to the global vars
     guestnumber[guestCount] = children + adults;
     guestCount++;
 
-    printf("\nGuest stay info has been stored under booking ID: %s\n", bookingID);
+
 }
 
 void findAndPrintByID() {
@@ -344,7 +346,10 @@ void processTableChoice(int numOfGuests) {
             printf("Would you like to choose a different table? (Y/N) : ");
             fflush(stdin);
             scanf(" %c", &option);
-            if (toupper(option) == 'Y') { processTableChoice(numOfGuests); }
+            if (toupper(option) == 'Y') { processTableChoice(numOfGuests); }//call the subroutine again so user can book
+            break;
+
+        case 'Z':
             break;
 
         case 0:
@@ -371,18 +376,21 @@ char bookTable(int numOfGuests) {
             fflush(stdin);
             scanf("%c", &choice);
             char confirm;
-            printf("Is this correct? (Y/N): ");
+            printf("Is this correct? (Y/N, Q to quit): ");
             fflush(stdin);
             scanf("%c", &confirm);
             if (toupper(confirm) == 'N') {
                 choice = 'X'; //dummy value given so the do-while loop repeats
             }
+            else if (toupper(confirm) == 'Q') {
+                choice = 'Z'; //dummy value given so the user can exit dinner subprogram instantly
+            }
             choice = toupper(choice);
-            if (choice != 'A' && choice != 'B' && choice != 'C' && choice != 'D' && choice != 'E' && choice != 'F' && choice != 'X') {
+            if (choice != 'A' && choice != 'B' && choice != 'C' && choice != 'D' && choice != 'E' && choice != 'F' && choice != 'X' && choice != 'Z') {
                 printf("Please enter a VALID option from the given list.\n");
             }
+        } while(choice!='A'&&choice!='B'&&choice!='C'&&choice!='D'&&choice!='E'&&choice!='F' && choice != 'Z');
 
-        } while(choice!='A'&&choice!='B'&&choice!='C'&&choice!='D'&&choice!='E'&&choice!='F');
         //dummy values given to choice if user tries to book an occupied table
         if (choice=='A' && endor7) return 'X';
         if (choice=='B' && naboo7) return 'X';
@@ -390,6 +398,9 @@ char bookTable(int numOfGuests) {
         if (choice=='D' && endor9) return 'X';
         if (choice=='E' && naboo9) return 'X';
         if (choice=='F' && tatooine9) return 'X';
+        if (choice=='Z') {
+            return 'Z';
+        }
 
         return choice;
     }
@@ -541,7 +552,8 @@ int main() {
         while (true) {
             char choice;
 int k=0;
-            printf("Do you want to Check In (C), Check Out (O), Dinner (D), Check info(I), or Quit (Q)? ");
+            printf("*********** Welcome to Kapa Hotel Main Menu ***********\n");
+            printf("Do you want to Check In (C), Check Out (O), Dinner (D), Check info(I)? ");
             scanf(" %c", &choice);
             choice = toupper(choice);
             if (choice == 'C') {
@@ -570,10 +582,7 @@ int k=0;
             else if (choice == 'I') {
                 findAndPrintByID();
             }
-            else if (choice == 'Q') {
-                printf("Goodbye!\n");
 
-            }
             else {
                 printf("Invalid option.\n");
             }

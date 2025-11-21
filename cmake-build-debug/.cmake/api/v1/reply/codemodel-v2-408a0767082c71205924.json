@@ -9,7 +9,7 @@
 					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
 					"minimumCMakeVersion" : 
 					{
-						"string" : "3.8"
+						"string" : "2.8"
 					},
 					"projectIndex" : 0,
 					"source" : ".",
@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/aryan.neshat25/Downloads/Kapa-hotel-/cmake-build-debug",
-		"source" : "C:/Users/aryan.neshat25/Downloads/Kapa-hotel-"
+		"build" : "C:/Users/prasanya.ramprasad25/Downloads/Kapa-hotel-/Kapa-hotel-/cmake-build-debug",
+		"source" : "C:/Users/prasanya.ramprasad25/Downloads/Kapa-hotel-/Kapa-hotel-"
 	},
 	"version" : 
 	{
