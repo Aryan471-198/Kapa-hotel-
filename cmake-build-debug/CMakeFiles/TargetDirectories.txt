@@ -1,3 +1,3 @@
-C:/Users/drary/Downloads/Kapa-hotel-/cmake-build-debug/CMakeFiles/Kapa_hotel_.dir
-C:/Users/drary/Downloads/Kapa-hotel-/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/drary/Downloads/Kapa-hotel-/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/bluef/Downloads/Kapa-hotel-/cmake-build-debug/CMakeFiles/Kapa_hotel_.dir
+C:/Users/bluef/Downloads/Kapa-hotel-/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/bluef/Downloads/Kapa-hotel-/cmake-build-debug/CMakeFiles/rebuild_cache.dir

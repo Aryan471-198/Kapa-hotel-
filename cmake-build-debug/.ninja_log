@@ -1,9 +1,5 @@
 # ninja log v6
-778	1286	7854359828895078	Kapa_hotel_.exe	b7e47927a8736e5
-6	777	7854359821093968	CMakeFiles/Kapa_hotel_.dir/main.cpp.obj	97006f94c9ee032
-33	844	7854390979929708	CMakeFiles/Kapa_hotel_.dir/main.cpp.obj	63b30f1458d64101
-845	1126	7854390988051776	Kapa_hotel_.exe	35ddff51edb8e4e7
-7	361	7854396718624717	CMakeFiles/Kapa_hotel_.dir/main.cpp.obj	63b30f1458d64101
-361	492	7854396722166358	Kapa_hotel_.exe	35ddff51edb8e4e7
-5	272	7854401017904822	CMakeFiles/Kapa_hotel_.dir/main.cpp.obj	63b30f1458d64101
 273	370	7854401020579850	Kapa_hotel_.exe	35ddff51edb8e4e7
+5	272	7854401017904822	CMakeFiles/Kapa_hotel_.dir/main.cpp.obj	63b30f1458d64101
+12	1578	7854406451338823	CMakeFiles/Kapa_hotel_.dir/main.cpp.obj	97006f94c9ee032
+1580	2455	7854406467017230	Kapa_hotel_.exe	b7e47927a8736e5
